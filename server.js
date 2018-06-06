@@ -22,10 +22,10 @@ new WebpackDevServer(webpack(config), {
       chunks: false,
       chunkModules: false
     }
-}).listen(port, 'localhost', function (err) {
+}).listen(port, '0.0.0.0', function (err) {
     if (err) {
         console.log(err);
     }
 
-  console.log(`Listening at localhost:${port}`);
+  console.log(`App is running on port:${port}`);
 });
