@@ -3,12 +3,13 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var port = process.env.PORT || 3000
 
 module.exports = {
     devtool: 'eval-source-map',
     entry: [
         'babel-polyfill',
-        'webpack-dev-server/client?http://localhost:3000',
+        `webpack-dev-server/client?http://localhost:${port}`,
         'webpack/hot/only-dev-server',
         'react-hot-loader/patch',
         path.join(__dirname, 'app/index.js')
