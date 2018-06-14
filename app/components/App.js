@@ -5,12 +5,6 @@ import React from 'react';
 
 const App = () =>
     <div>
-        {/* <h1>Filter table</h1>
-        { Routes }
-        <footer className={footer}>
-            <Link to="/">Filterable Table</Link>
-            <Link to="/about">About</Link>
-        </footer> */}
         <h1>Filter table</h1>
     </div>;
 
