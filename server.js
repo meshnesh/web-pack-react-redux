@@ -1,11 +1,14 @@
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.config');
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 3000;
+const host = process.env.HOST || '0.0.0.0'
 
 new WebpackDevServer(webpack(config), {
     publicPath: config.output.publicPath,
     hot: true,
+    open: true,
+    disableHostCheck: true,
     historyApiFallback: true,
     // It suppress error shown in console, so it has to be set to false.
     quiet: false,
@@ -22,7 +25,7 @@ new WebpackDevServer(webpack(config), {
       chunks: false,
       chunkModules: false
     }
-}).listen(port, '0.0.0.0', function (err) {
+}).listen(port, host, function (err) {
     if (err) {
         console.log(err);
     }
